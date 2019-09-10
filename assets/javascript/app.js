@@ -1,13 +1,22 @@
-var counter = 30;
-var currentQuestion = 1;
+var counter = 20;
+var currentQuestion = 0;
 var correctAnswer = 0;
 var wrongAnswer = 0;
 var score = 0; 
 var timer;
 
+//Timer function
+function countDown() {
+    counter--;
+
+    $(time).html('Time: ' + counter +" secs");
+}
+
 //Question and answer choices
 
 function displayQuestion() {
+
+    timer = setInterval(countDown, 1000);
     
     var question = triviaQuestions [currentQuestion].question;
     var options = triviaQuestions [currentQuestion].options;
