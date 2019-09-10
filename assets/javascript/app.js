@@ -1,15 +1,34 @@
-var counter = 20;
+var counter = 5;
 var currentQuestion = 0;
 var correctAnswer = 0;
-var wrongAnswer = 0;
+var missedQuestion = 0;
 var score = 0; 
 var timer;
 
+function nextQuestion() {
+    currentQuestion++;
+    displayQuestion();
+
+}
+
+
 //Timer function
+function timesUp() {
+    clearInterval(timer);
+    missedQuestion++;
+
+    nextQuestion();
+    
+}
+
 function countDown() {
     counter--;
 
-    $(time).html('Time: ' + counter +" secs");
+    $('#time').html('Time: ' + counter +" secs");
+
+    if(counter === 0) {
+        timesUp(timer);
+    }
 }
 
 //Question and answer choices
@@ -22,7 +41,7 @@ function displayQuestion() {
     var options = triviaQuestions [currentQuestion].options;
 
     //time display
-    $(time).html('Time: ' + counter +" secs");
+    $('#time').html('Time: ' + counter +" secs");
 
     $('#game').html(`
         <h4>${question}</h4>
