@@ -15,7 +15,21 @@ function displayQuestion() {
     //time display
     $(time).html('Time: ' + counter +" secs");
 
-    $('#game').html('<p>' + question + '</p>');
+    $('#game').html(`
+        <h4>${question}</h4>
+        ${loadoptions(options)}
+    `);
+}
+
+function loadoptions(options) {
+    var result = '';
+
+    for(var i = 0; i < options.length; i++) {
+        //Testing out new notation ` `
+        result += `<p class="options" data-answer="${options[i]}">${options[i]}</p>`;
+    }
+
+    return result;
 }
 
 displayQuestion();
