@@ -1,4 +1,4 @@
-var counter = 5;
+var counter = 25;
 var currentQuestion = 0;
 var correctAnswer = 0;
 var missedQuestion = 0;
@@ -18,7 +18,6 @@ function timesUp() {
     missedQuestion++;
 
     nextQuestion();
-    
 }
 
 function countDown() {
