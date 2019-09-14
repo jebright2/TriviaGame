@@ -17,4 +17,10 @@ var triviaQuestions = [
         answer: "Jupiter"
     },
 
+    {
+        question: "What is the largest, 2-digit prime number?",
+        options: ["71", "97", "99", "101"],
+        answer: "97"
+    },
+
 ];
