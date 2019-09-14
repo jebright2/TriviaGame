@@ -1,14 +1,20 @@
-var counter = 25;
+var counter = 5;
 var currentQuestion = 0;
 var correctAnswer = 0;
 var missedQuestion = 0;
 var score = 0; 
-var timer;
+var timer = 0;
 
 function nextQuestion() {
+
+    var lastQuestion = (triviaQuestions.length - 1) === currentQuestion;
+    if (lastQuestion) {
+        console.log("Game Over!");
+    }
+    else {
     currentQuestion++;
     displayQuestion();
-
+    }
 }
 
 
@@ -18,22 +24,23 @@ function timesUp() {
     missedQuestion++;
 
     nextQuestion();
+    
 }
 
 function countDown() {
     counter--;
 
-    $('#time').html('Time: ' + counter +" secs");
+    $("#time").html("Time: " + counter +" secs");
 
-    if(counter === 0) {
-        timesUp(timer);
+    if (counter === 0) {
+        timesUp();
     }
 }
 
 //Question and answer choices
 
 function displayQuestion() {
-
+    counter = 5;
     timer = setInterval(countDown, 1000);
     
     var question = triviaQuestions [currentQuestion].question;
