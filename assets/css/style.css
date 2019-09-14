@@ -4,3 +4,14 @@
     cursor: default;
     border-radius: 10px;
 }
+
+body {
+    background-image: url("");
+    background-color: lightskyblue;
+}
+
+.jumbotron {
+    text-align: center;
+    background: none;
+}
+}

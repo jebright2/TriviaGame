@@ -65,5 +65,11 @@ function loadoptions(options) {
 
     return result;
 }
+// Advance to next question after answer selected
+$(document).on("click", ".options", function() {
+    var selectedAnswer = $(this).attr("data-answer");
+    console.log('oh yeah!');
+});
+
 
 displayQuestion();
