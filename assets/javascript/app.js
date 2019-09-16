@@ -25,8 +25,8 @@ function nextQuestion() {
 function timesUp() {
     clearInterval(timer);
     missedQuestion++;
-
-    nextQuestion();
+    giphyDisplay("incorrect");
+    setTimeout(nextQuestion, 3 * 1000);
     
 }
 
@@ -80,13 +80,15 @@ $(document).on("click", ".options", function() {
     // Updating the score
     if (correctAnswer === selectedAnswer) {
         score++;
-        nextQuestion ();
+        giphyDisplay("correct");
+        setTimeout(nextQuestion, 3 * 1000);
         console.log ('You got it!!!!');
     }   
     
     else {
         missedQuestion++;
-        nextQuestion ();
+        giphyDisplay("incorrect");
+        setTimeout(nextQuestion, 3 * 1000);
         console.log('That answer is incorrect!');
     }
     
@@ -123,5 +125,22 @@ function displayRemainingQuestions() {
 }
 
 //Triggers Giphy
+function giphyDisplay(status) {
+    var correctAnswer = triviaQuestions[currentQuestion].correctAnswer;
+
+    if (status === "correct") {
+        $("#game").html(`
+            <p class="giphy-image">You got it!!!</p>
+            <p class="giphy-image">The correct answer is: <b>${correctAnswer}</b></p>
+        `);
+    }
+
+    else {
+        $("#game").html(`
+            <p class="giphy-image">Ouch!!! Sorry, you missed that one.</p>
+            <p class="giphy-image">The correct answer is: <b>${correctAnswer}</b></p>
+        `);
+    }
+}
 
 displayQuestion();

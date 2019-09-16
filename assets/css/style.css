@@ -13,5 +13,9 @@ body {
 .jumbotron {
     text-align: center;
     background: none;
+    font: white;
 }
+
+#answers {
+    font: white;
 }
