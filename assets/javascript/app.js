@@ -50,11 +50,12 @@ function displayQuestion() {
     var options = triviaQuestions [currentQuestion].options;
 
     //time display
-    $('#time').html('Time: ' + counter +" secs");
+    $('#time').html('Time Remaining: ' + counter +" secs");
 
     $('#game').html(`
         <h4>${question}</h4>
         ${loadoptions(options)}
+        ${displayRemainingQuestions()}
     `);
 }
 
@@ -96,11 +97,31 @@ function displayResult () {
     <p>You answered ${score} question(s) correctly</p>
     <p>You missed ${missedQuestion} question(s)</p>
     <p>Total score: ${score*10}</p>
-    <button>Reset Game</button>
+    <button class="btn btn-danger" id="reset">Reset Game</button>
     `;
 
     $("#game").html(result);
 }
+// Reset button functionality
+$(document).on("click", "#reset", function() {
+    console.log("This resets your game")
 
+        counter = 20;
+        currentQuestion = 0;
+        correctAnswer = 0;
+        missedQuestion = 0;
+        score = 0; 
+        timer = null;
+
+    displayQuestion();
+});
+
+function displayRemainingQuestions() {
+    var remainingQuestions = triviaQuestions.length - (currentQuestion + 1);
+    
+    return ("Remaining Question(s): " + remainingQuestions);
+}
+
+//Triggers Giphy
 
 displayQuestion();
