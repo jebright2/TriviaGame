@@ -7,9 +7,12 @@ var timer = 0;
 
 function nextQuestion() {
 
+    //Used to end the game
     var lastQuestion = (triviaQuestions.length - 1) === currentQuestion;
     if (lastQuestion) {
         console.log("Game Over!");
+    displayResult();
+
     }
     else {
     currentQuestion++;
@@ -30,7 +33,7 @@ function timesUp() {
 function countDown() {
     counter--;
 
-    $("#time").html("Time: " + counter +" secs");
+    $("#time").html("Time Remaining: " + counter +" secs");
 
     if (counter === 0) {
         timesUp();
@@ -66,22 +69,38 @@ function loadoptions(options) {
     return result;
 }
 // Advance to next question after answer selected
+
 $(document).on("click", ".options", function() {
+
+    clearInterval(timer);
     var selectedAnswer = $(this).attr("data-answer");
     var correctAnswer = triviaQuestions [currentQuestion].correctAnswer;
 
     // Updating the score
     if (correctAnswer === selectedAnswer) {
         score++;
+        nextQuestion ();
         console.log ('You got it!!!!');
-    }
+    }   
     
     else {
         missedQuestion++;
+        nextQuestion ();
         console.log('That answer is incorrect!');
     }
     
 });
+
+function displayResult () {
+    var result = `
+    <p>You answered ${score} question(s) correctly</p>
+    <p>You missed ${missedQuestion} question(s)</p>
+    <p>Total score: ${score*10}</p>
+    <button>Reset Game</button>
+    `;
+
+    $("#game").html(result);
+}
 
 
 displayQuestion();
