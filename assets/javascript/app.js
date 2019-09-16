@@ -68,7 +68,19 @@ function loadoptions(options) {
 // Advance to next question after answer selected
 $(document).on("click", ".options", function() {
     var selectedAnswer = $(this).attr("data-answer");
-    console.log('oh yeah!');
+    var correctAnswer = triviaQuestions [currentQuestion].correctAnswer;
+
+    // Updating the score
+    if (correctAnswer === selectedAnswer) {
+        score++;
+        console.log ('You got it!!!!');
+    }
+    
+    else {
+        missedQuestion++;
+        console.log('That answer is incorrect!');
+    }
+    
 });
 
 
