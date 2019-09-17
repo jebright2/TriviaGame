@@ -24,3 +24,7 @@ var triviaQuestions = [
     },
 
 ];
+
+var gifImages = [
+    
+]

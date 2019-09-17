@@ -132,6 +132,7 @@ function giphyDisplay(status) {
         $("#game").html(`
             <p class="giphy-image">You got it!!!</p>
             <p class="giphy-image">The correct answer is: <b>${correctAnswer}</b></p>
+            <img src=""/>
         `);
     }
 
@@ -139,8 +140,18 @@ function giphyDisplay(status) {
         $("#game").html(`
             <p class="giphy-image">Ouch!!! Sorry, you missed that one.</p>
             <p class="giphy-image">The correct answer is: <b>${correctAnswer}</b></p>
+            <img src=""/>
         `);
     }
 }
 
-displayQuestion();
+function giphyImage() {
+
+}
+
+$("#start").click(function () {
+    $("#start").remove();
+    $("#time").html(counter);
+    displayQuestion();
+
+})
