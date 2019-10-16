@@ -1,4 +1,4 @@
-var counter = 20;
+var counter = 30;
 var currentQuestion = 0;
 var correctAnswer = 0;
 var missedQuestion = 0;
@@ -43,7 +43,7 @@ function countDown() {
 //Question and answer choices
 
 function displayQuestion() {
-    counter = 20;
+    counter = 30;
     timer = setInterval(countDown, 1000);
     
     var question = triviaQuestions [currentQuestion].question;
