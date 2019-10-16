@@ -23,6 +23,42 @@ var triviaQuestions = [
         correctAnswer: "97"
     },
 
+    {
+        question: "By what name was William F. Cody better known?",
+        options: ["Billy the Kid", "Slick Willie", "William the Terrible", "Buffalo Bill"],
+        correctAnswer: "Buffalo Bill"
+    },
+
+    {
+        question: "What is the largest bone in the human body?",
+        options: ["the humerous.", "the femur.", "the tibia.", "the fibula."],
+        correctAnswer: "the femur."
+    },
+
+    {
+        question: "Which pop album is the best selling of all time?",
+        options: ["Thriller by Michael Jackson", "21 by Adele", "The White Album by The Beatles", "A Night at the Opera by Queen"],
+        correctAnswer: "Thriller by Michael Jackson"
+    },
+
+    {
+        question: "Who invented calculus?",
+        options: ["Ptolemy", "Pythagoras", "Sir Issac Newton", "Ren&eacute Descartes"],
+        correctAnswer: "Sir Issac Newton"
+    },
+
+    {
+        question: "The color of cerulean is?",
+        options: ["blue.", "red.", "green.", "purple."],
+        correctAnswer: "blue."
+    },
+
+    {
+        question: "Who presented the theory of Evolution?",
+        options: ["Galileo Galilei", "Stephen Hawking", "Michael Faraday", "Charles Darwin"],
+        correctAnswer: "Charles Darwin"
+    }
+
 ];
 
 var gifImages = [
