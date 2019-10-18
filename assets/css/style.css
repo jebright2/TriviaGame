@@ -8,14 +8,19 @@
 body {
     background-image: url("../images/blue-sky.jpeg");
     background-color: lightskyblue;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .jumbotron {
     text-align: center;
     background: none;
-    font: white;
 }
+p:hover {
+    background-color: yellow;
+    font-weight: bold;
+  }
 
-#answers {
-    font: white;
-}
+  return 

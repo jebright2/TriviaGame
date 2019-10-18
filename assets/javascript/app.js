@@ -56,6 +56,7 @@ function displayQuestion() {
         <h4>${question}</h4>
         ${loadoptions(options)}
         ${displayRemainingQuestions()}
+        
     `);
 }
 
